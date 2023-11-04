@@ -7,13 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tek.bdd.base.BaseSetup;
+import tek.bdd.pages.CreateAccountPage;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import static java.sql.DriverManager.getDriver;
 
 public class SeleniumUtility extends BaseSetup {
+public static String today;
+public static String tomorrow;
 
     private WebDriverWait getWait() {
         return new WebDriverWait(getDriver(), Duration.ofMinutes(1));
@@ -35,6 +42,7 @@ public class SeleniumUtility extends BaseSetup {
         waitUntilElementClickable(locator).click();
     }
 
+
     public String getElementText(By locator) {
         WebElement element = waitUntilVisibilityOfElement(locator);
         return element.getText();
@@ -48,6 +56,11 @@ public class SeleniumUtility extends BaseSetup {
     public void enterValue(By locator, String text) {
         WebElement element = waitUntilVisibilityOfElement(locator);
         element.sendKeys(text);
+    }
+
+    public void selectFromDropDown(By locator1, By locator2) {
+        clickOnElement(locator1);
+        clickOnElement(locator2);
     }
 
     public List<WebElement> getListOfElements(By locator) {
@@ -65,11 +78,30 @@ public class SeleniumUtility extends BaseSetup {
     public void selectFromDropDown(By locator, String option) {
         List<WebElement> itemPerPageOptions = getListOfElements(locator);
 
-        for(WebElement element : itemPerPageOptions) {
+        for (WebElement element : itemPerPageOptions) {
             String text = element.getText();
             if (text.contains(option)) {
                 element.click();
             }
         }
     }
+
+        public static String currentDate() {
+            LocalDate today1 = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+            today = today1.format(formatter).trim();
+            return today;
+
+
+    }
+
+    public static String tomorrowDate() {
+        LocalDate today1 = LocalDate.now();
+        LocalDate tomorrow1 = today1.plusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
+        tomorrow = tomorrow1.format(formatter).trim();
+        return tomorrow;
+    }
 }
+
+

@@ -1,19 +1,19 @@
 package tek.bdd.steps;
 
 
-import io.cucumber.java.Before;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import tek.bdd.utility.SeleniumUtility;
 
 public class Hooks extends SeleniumUtility {
     @Before
-    public void openBrowser() {
+    public void setupTests() {
         openBrowser();
     }
 
     @After
-    public void closeBrowser() {
-        closeBrowser();
+    public void cleanUpTest() {
+        driverQuit();
     }
 
 }

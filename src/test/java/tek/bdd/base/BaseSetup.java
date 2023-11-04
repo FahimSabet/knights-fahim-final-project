@@ -1,15 +1,17 @@
 package tek.bdd.base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BaseSetup  {
+public class BaseSetup {
     //private no other clasess can directly access to instance variable
     //for encapsulation to only read not set only set in this class other class only acses to read
     private static WebDriver driver;
@@ -56,7 +58,12 @@ public class BaseSetup  {
         String browserType = properties.getProperty("ui.browser.type");
 
         if (browserType.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+
+            //Add headless option to Chrome browser
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+
         } else if (browserType.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else if (browserType.equalsIgnoreCase("edge")) {
