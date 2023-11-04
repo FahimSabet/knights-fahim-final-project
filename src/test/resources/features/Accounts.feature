@@ -6,13 +6,13 @@ Feature: Accounts
     Then enter password as "tek_supervisor"
     Then click on sign_in button
 
-  @US_11
+  @Smoke
   Scenario: Validate the accounts
     Then navigate to accounts
     Then validate 5 rows are visible as default
 
 
-  @US_12
+  @Smoke
     Scenario: Validate the number of accounts per page 5, 10, 25, 50
 #      When click on Login button
 #      Then enter username as "supervisor"
