@@ -1,3 +1,4 @@
+@Regression
 Feature: User is navigating to Plans
 
   Background:
@@ -7,13 +8,13 @@ Feature: User is navigating to Plans
     Then click on sign_in button
     Then click on Plans
 
-  @Regression
+  @US_9
   Scenario: Validate the user can navigate to the plans page and see 4 rows of data
 
     Then validate the 4 rows of data is visible
 
 
-  @Smoke
+  @US_10
   Scenario: Validate the date created and date expired
 #    When click on Login button
 #    Then enter username as "supervisor"

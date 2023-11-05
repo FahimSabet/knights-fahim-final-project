@@ -1,3 +1,4 @@
+@Regression
 Feature: Accounts
 
   Background:
@@ -6,13 +7,13 @@ Feature: Accounts
     Then enter password as "tek_supervisor"
     Then click on sign_in button
 
-  @Smoke
+  @US_7
   Scenario: Validate the accounts
     Then navigate to accounts
     Then validate 5 rows are visible as default
 
 
-  @Smoke
+  @US_8
     Scenario: Validate the number of accounts per page 5, 10, 25, 50
 #      When click on Login button
 #      Then enter username as "supervisor"

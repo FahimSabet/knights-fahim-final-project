@@ -1,15 +1,16 @@
+@Regression
 Feature: Create Account
 
   Background:
     When click on Create Primary Account
 
-@Regression
+@US_4
   Scenario: Validating clicking on create primary account form
 
     Then user should see the form title as "Create Primary Account Holder"
 
 
-    @Regression
+    @US_5
     Scenario Outline: Validating filling the form
 #      When click on Create Primary Account
       Then enter Email Address as "<Email Address>"
@@ -27,7 +28,7 @@ Feature: Create Account
       |Email Address | First Name |Last Name
       |james@gmail.com| James | Watt
 
-      @Regression
+      @US_6
       Scenario Outline: : Validating information with an existing email address
 #        When click on Create Primary Account
         Then enter Email Address as "<Email Address>"

@@ -1,7 +1,9 @@
+@Regression
+
 Feature: Valid Credentials and navigate to the customer service portal
 
 
-  @Smoke
+  @US_11
   Scenario: Validating the user with valid credentials can see Customer Service Portal
     When click on Login button
     Then enter username as "supervisor"
@@ -16,7 +18,7 @@ Feature: Valid Credentials and navigate to the customer service portal
     Then validate the Logout button is visible
     Then validate the Moon button is visible
 
-  @Regression
+  @US_12
     Scenario: Validating the user can logout successfully
       When click on Login button
       Then enter username as "supervisor"

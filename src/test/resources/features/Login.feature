@@ -1,10 +1,12 @@
 
+@Regression
+
 Feature: Login with valid credentials
 
   Background:
     When click on Login button
 
-  @Regression
+  @US_1
   Scenario: Validate login with valid username and password
 
     Then click on sign_in button
@@ -14,7 +16,7 @@ Feature: Login with valid credentials
     Then validate that "Customer Service Portal" is visible
 
 
-    @Smoke
+    @US_2
     Scenario: Validate login with invalid username and password
 #      When click on Login button
       Then enter username as "face wash"
