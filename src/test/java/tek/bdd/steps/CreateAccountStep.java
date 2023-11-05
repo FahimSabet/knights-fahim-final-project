@@ -88,8 +88,9 @@ public class CreateAccountStep extends SeleniumUtility {
    }
 
     @Then("click on Create Account")
-    public void clickOnCreateAccount() {
+    public void clickOnCreateAccount() throws InterruptedException {
 clickOnElement(CreateAccountPage.CREATE_ACCOUNT_BUTTON);
+Thread.sleep(1000);
 
 
     }
@@ -106,6 +107,30 @@ clickOnElement(CreateAccountPage.CREATE_ACCOUNT_BUTTON);
     public void validateErrorMessage(String expectedErrorMessage) {
         String actualErrorMessage = getElementText(CreateAccountPage.ERROR_MESSAGE);
         Assert.assertEquals("validating the error message", expectedErrorMessage, actualErrorMessage);
+
+    }
+
+
+
+    @Then("click on submit")
+    public void clickOnSubmit() {
+      clickOnElement(CreateAccountPage.CLICK_ON_SUBMIT);
+
+    }
+
+    @Then("in the form enter username as {string}")
+    public void inTheFormEnterUserName(String formUserName) throws InterruptedException {
+    enterValue(CreateAccountPage.FORM_USERNAME,formUserName);
+    Thread.sleep(1000);
+    }
+    @Then("in the form enter password as {string}")
+    public void inTheFormEnterPassword(String formPassword) {
+        enterValue(CreateAccountPage.FORM_PASSWORD, formPassword);
+
+    }
+    @Then("in the form enter confirmPassword as {string}")
+    public void inTheFormEnterConfirmPassword(String formConfirmPassword) {
+        enterValue(CreateAccountPage.FORM_CONFIRM_PASSWORD, formConfirmPassword);
 
     }
 

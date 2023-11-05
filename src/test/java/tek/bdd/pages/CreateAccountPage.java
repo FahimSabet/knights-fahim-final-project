@@ -42,5 +42,13 @@ public class CreateAccountPage {
     public final static By SIGN_UP_AND_EMAIL_SEEN_IN_THE_ABOVE = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/h2[1]");
 
     public final static By ERROR_MESSAGE = By.xpath("//div[text()='ERROR']");
+
+    public final static By CLICK_ON_SUBMIT = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/form/div/div[4]/button[1]");
+
+    public final static By FORM_USERNAME = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/form/div/div[1]/input");
+
+    public final static By FORM_PASSWORD = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/form/div/div[2]/div/input");
+
+    public final static By FORM_CONFIRM_PASSWORD = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/form/div/div[3]/div[1]/input");
 }
 
