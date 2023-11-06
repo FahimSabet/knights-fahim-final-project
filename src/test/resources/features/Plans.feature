@@ -21,8 +21,8 @@ Feature: User is navigating to Plans
 #    Then enter password as "tek_supervisor"
 #    Then click on sign_in button
 #    Then click on Plans
-    Then validate Date Created is today's date
-    Then validate the Date Expire is tomorrow's date
+    Then validate Date Created is today's date as "November 5, 2023"
+    Then validate the Date Expire is tomorrow's date as "November 6, 2023"
 
 
 
