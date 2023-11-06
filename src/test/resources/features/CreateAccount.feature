@@ -47,7 +47,7 @@ Feature: Create Account
 
     Examples:
       |Email Address | First Name |Last Name
-      |john.bass@gmail.com| James | Watt
+      |john.cena@gmail.com| James | Watt
 
       @US_6
       Scenario Outline: : Validating information with an existing email address
