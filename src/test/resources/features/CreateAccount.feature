@@ -29,7 +29,7 @@ Feature: Create Account
       |james@gmail.com| James | Watt
 
 @US_13
-  Scenario Outline: Validating filling the form
+  Scenario Outline: Validating filling the form with sign in
 #      When click on Create Primary Account
     Then enter Email Address as "<Email Address>"
     Then enter First Name as "<First Name>"
@@ -47,7 +47,7 @@ Feature: Create Account
 
     Examples:
       |Email Address | First Name |Last Name
-      |johny@gmail.com| James | Watt
+      |john.bass@gmail.com| James | Watt
 
       @US_6
       Scenario Outline: : Validating information with an existing email address
